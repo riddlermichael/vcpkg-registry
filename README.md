@@ -1,2 +1,2 @@
 # vcpkg-registry
-vcpkg-registry for my projects
+[vcpkg](https://vcpkg.io/) registry for my projects.
