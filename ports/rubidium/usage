@@ -1,0 +1,13 @@
+Rubidium provides CMake targets:
+
+    # only pure C library
+    find_package(RbC CONFIG REQUIRED) # 'CONFIG' may be omitted
+    target_link_libraries(main PRIVATE RbC::RbC)
+    # or equivalently
+    # target_link_libraries(main PRIVATE RbC::RbC-static)
+
+    # C++ library, imports RbC::RbC automatically
+    find_package(Rb CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE Rb::Rb)
+    # or equivalently
+    # target_link_libraries(main PRIVATE Rb::Rb-static)

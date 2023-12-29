@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO riddlermichael/rubidium
     REF master
-    SHA512 0e64ecfe89a9c0b0b1e0447cf56f0b9685b66acea8a4244e203021f493b2937c0813791b0d5fbe502f2323214ed222b0dc6fc244a6ec1819bb62eb72ca1e40c6
+    SHA512 b0e51d73bdd342c23806b349cc1951257ce5db9c18021782431b13f2b8e4837b055ecbaa7364b55dadc21c8669043e5dcc152f746a0c6284e4ae5070a564e113
 )
 
 vcpkg_cmake_configure(
@@ -14,9 +14,21 @@ vcpkg_cmake_configure(
 )
 
 vcpkg_cmake_install()
-vcpkg_cmake_config_fixup()
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+vcpkg_cmake_config_fixup(
+    CONFIG_PATH lib/cmake/RbC
+    DO_NOT_DELETE_PARENT_CONFIG_PATH
+)
+vcpkg_cmake_config_fixup(
+    CONFIG_PATH lib/cmake/Rb
+    DO_NOT_DELETE_PARENT_CONFIG_PATH
+)
 
-# file(INSTALL "${SOURCE_PATH}/LICENSE" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME copyright)
-# configure_file("${CMAKE_CURRENT_LIST_DIR}/usage" "${CURRENT_PACKAGES_DIR}/share/${PORT}/usage" COPYONLY)
+file(REMOVE_RECURSE
+    "${CURRENT_PACKAGES_DIR}/debug/include"
+    "${CURRENT_PACKAGES_DIR}/debug/lib/cmake"
+    "${CURRENT_PACKAGES_DIR}/lib/cmake"
+)
+
+file(INSTALL "${SOURCE_PATH}/LICENSE" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME copyright)
+configure_file("${CMAKE_CURRENT_LIST_DIR}/usage" "${CURRENT_PACKAGES_DIR}/share/${PORT}/usage" COPYONLY)
