@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO riddlermichael/rubidium
     REF master
-    SHA512 b0e51d73bdd342c23806b349cc1951257ce5db9c18021782431b13f2b8e4837b055ecbaa7364b55dadc21c8669043e5dcc152f746a0c6284e4ae5070a564e113
+    SHA512 5ded16099ba7c776f298966cd13aa64c4765f2342bf43ed26a0dd3a5e9c58c35f04c81dbaa02e0ed0ea235270e0bdf64285e051c0e825cb558daa5fbead99dd7
 )
 
 vcpkg_cmake_configure(
