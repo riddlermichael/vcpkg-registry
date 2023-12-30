@@ -12,5 +12,25 @@
       "name": "vcpkg-cmake-config",
       "host": true
     }
+  ],
+  "features": {
+    "duration-has-nan": {
+      "description": "time::Duration has NaN value",
+      "dependencies": [
+        {
+          "name": "time-v2"
+        }
+      ]
+    },
+    "full-source-location-info": {
+      "description": "Print full source location info"
+    },
+    "time-v2": {
+      "description": "Use time::v2"
+    }
+  },
+  "default-features": [
+    "full-source-location-info",
+    "time-v2"
   ]
 }
