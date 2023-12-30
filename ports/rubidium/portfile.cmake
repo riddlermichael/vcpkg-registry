@@ -22,9 +22,11 @@ vcpkg_cmake_configure(
 vcpkg_cmake_install()
 
 vcpkg_cmake_config_fixup(
+    PACKAGE_NAME RbC
     CONFIG_PATH lib/cmake/RbC
     DO_NOT_DELETE_PARENT_CONFIG_PATH)
 vcpkg_cmake_config_fixup(
+    PACKAGE_NAME Rb
     CONFIG_PATH lib/cmake/Rb
     DO_NOT_DELETE_PARENT_CONFIG_PATH)
 
