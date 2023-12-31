@@ -1,4 +1,4 @@
-vcpkg_check_linkage(ONLY_DYNAMIC_LIBRARY)
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
@@ -19,7 +19,9 @@ vcpkg_cmake_configure(
         ${FEATURE_OPTIONS}
         -DBUILD_TESTING=OFF
         -DBUILD_DOC=OFF
-        -DBUILD_EXAMPLES=OFF)
+        -DBUILD_EXAMPLES=OFF
+    MAYBE_UNUSED_VARIABLES
+        BUILD_EXAMPLES)
 
 vcpkg_cmake_install()
 
