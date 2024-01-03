@@ -1,5 +1,3 @@
-vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
-
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO riddlermichael/rubidium
@@ -17,9 +15,9 @@ vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
         ${FEATURE_OPTIONS}
-        -DBUILD_TESTING=OFF
         -DBUILD_DOC=OFF
         -DBUILD_EXAMPLES=OFF
+        -DBUILD_TESTING=OFF
     MAYBE_UNUSED_VARIABLES
         BUILD_EXAMPLES)
 
