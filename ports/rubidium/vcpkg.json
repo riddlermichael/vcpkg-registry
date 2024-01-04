@@ -19,10 +19,7 @@
   ],
   "features": {
     "duration-has-nan": {
-      "description": "time::Duration has NaN value",
-      "dependencies": [
-        "time-v2"
-      ]
+      "description": "time::Duration has NaN value"
     },
     "full-source-location-info": {
       "description": "Print full source location info"
