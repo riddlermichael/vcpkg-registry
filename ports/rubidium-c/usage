@@ -1,0 +1,4 @@
+Rubidium-C provides CMake targets:
+
+    find_package(RbC CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE RbC::RbC)
